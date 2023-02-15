@@ -1,0 +1,193 @@
+span {
+  color: #e5e7eb;
+  display: block;
+  font-size: 90px;
+  line-height: 1.1;
+  position: relative;
+  padding: 0 15px 15px;
+  animation-name: var(--animationS, b);
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+span::before {
+  animation-name: var(--animation, a);
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(90deg, var(--start-color), var(--end-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*   -webkit-text-stroke: 0.5px #000; */
+  /*   color: #FFF; */
+  font-size: 90px;
+  position: absolute;
+  inset: 0;
+  content: var(--content);
+  opacity: 1;
+}
+
+@keyframes a {
+  0%,
+  16.667%,
+  100% {
+    color: #000;
+    opacity: 1;
+  }
+
+  33.333%,
+  83.333% {
+    color: #e5e7eb;
+    opacity: 0;
+  }
+}
+
+@keyframes b {
+  0%,
+  16.667%,
+  100% {
+    color: #000;
+    opacity: 1;
+  }
+
+  33.333%,
+  83.333% {
+    color: #e5e7eb;
+    opacity: 1;
+  }
+}
+
+@keyframes a2 {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  33.333%,
+  50% {
+    opacity: 1;
+  }
+
+  16.667%,
+  66.667% {
+    opacity: 0;
+  }
+}
+
+@keyframes b2 {
+  0%,
+  100% {
+    color: #e5e7eb;
+    opacity: 1;
+  }
+
+  33.333%,
+  50% {
+    color: #000;
+    opacity: 1;
+  }
+
+  16.667%,
+  66.667% {
+    color: #e5e7eb;
+    opacity: 1;
+  }
+}
+
+@keyframes a3 {
+  0%,
+  50%,
+  100% {
+    color: #000;
+    opacity: 0;
+  }
+
+  66.667%,
+  83.333% {
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+@keyframes b3 {
+  0%,
+  50%,
+  100% {
+    color: #e5e7eb;
+    opacity: 1;
+  }
+
+  66.667%,
+  83.333% {
+    color: #000;
+    opacity: 1;
+  }
+}
+
+/* ? Button start */
+
+.button {
+  padding: 0 1rem;
+  position: relative;
+  display: inline-flex;
+  border: none;
+  min-width: 120px;
+  min-height: 48px;
+}
+
+.button-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-background {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  border-radius: 4px;
+  background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+  background-size: 400% 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  animation: backgroundAnimation 8s ease-in-out infinite;
+}
+
+
+.button-background:after {
+    content: '';
+    position: absolute;
+    background-size: inherit;
+    background-image: inherit;
+    -webkit-animation: inherit;
+    animation: inherit;
+  left: 0;
+  right: 0;
+  top: 2px;
+  height: 100%;
+  filter: blur(0.5rem);
+}
+
+@keyframes backgroundAnimation {
+  50% {
+    background-position: 140% 50%;
+    transform: skew(-2deg);
+  }
+}
+
+.colors {
+    color: #5800aa;
+    color: #5451ce;
+    color: #05dbb2;
+    color: #0087bf;
+}
